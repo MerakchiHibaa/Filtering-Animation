@@ -1,4 +1,5 @@
 import {useState} from 'react' ;
+import BlogList from './BlogList';
 const Home = () => {
   
 /* const [name , setName] = useState('Mario') ; 
@@ -15,14 +16,7 @@ const handleClick = () => {
     )
     return ( 
         <div className="home"> 
-      { blogs.map((blog)=>(
-          <div className="blog-preview" key={blog.id}> 
-          <h2> {blog.title} </h2>
-          <p>Written by {blog.author}</p>
-          
-          </div>
-
-      ))}
+      <BlogList blogs={blogs} title="All Blogs"></BlogList>
 {/*         <button onClick={handleClick}  > Click me</button>
  */}{/*         <button onClick ={()=>  handleClickAgain('mario')}> Click me again </button>
  */}        </div>
