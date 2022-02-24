@@ -16,7 +16,8 @@ const Home = () => {
         setBlogs(newBlogs) ;
     } */
     useEffect(() => {
-        fetch('http://localhost:8000/blogs')
+/*       npx json-server --watch data/db.json --port 8000
+ */      /*   fetch('http://localhost:8000/blogs')
      .then(res => {
         return res.json() ;
      })
@@ -24,17 +25,25 @@ const Home = () => {
 setBlogs(data) ;
 setIsPending(false) ;
  
-     })
-    /*  setTimeout( ()=> { 
+     }) */
+     setTimeout( ()=> { 
      fetch('http://localhost:8000/blogs')
      .then(res => {
+        if(!res.ok) {
+           throw Error('could not fetch the data for that resource') ; 
+
+        }
         return res.json() ;
      })
      .then(data => {
 setBlogs(data) ;
 setIsPending(false) ;
  
-     }) } , 1000 ) ;  */
+     })
+     .catch((e) => {
+        console.log(e.message) ; 
+     })
+    } , 1000 ) ; 
      } , [])
 
     return ( 
