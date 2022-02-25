@@ -3,11 +3,17 @@ const Create = () => {
     const [title , setTitle] = useState('') ; 
     const [body , setBody] = useState('') ; 
     const [author , setAuthor] = useState('mario') ; 
+
     const handleSubmit = (e) => {
         e.preventDefault() ;
         const blog = { title, body , author} ; 
-        console.log(blog) ;
-
+        fetch('http://localhost:8000/blogs', { 
+            method : "POST" , 
+            headers: {"Content-Type": "application/json"} , 
+            body: JSON.stringify(blog) 
+        }).then (()=> {
+            console.log("new blog added ! ") ;
+        })
 
     }
 
