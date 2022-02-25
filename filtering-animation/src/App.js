@@ -1,6 +1,6 @@
 import './App.css';
 import Movie from './Movie' ;
-
+import Filter from './Filter' ;
 import { useEffect , useState} from "react" ; 
 function App() {
   const [popular , setPopular] = useState([]) ; //the data we get is an array of
@@ -14,6 +14,7 @@ function App() {
   }
   return (
     <div className="App">
+      <Filter></Filter>
      <div className="popular-movies">
        {popular.map(movie => {
          return <Movie key={movie.id} movie={movie} /> 
