@@ -5,7 +5,7 @@ import useFetch from './useFetch' ;
     const { data : blog , error , isPending} = useFetch('http://localhost:8000/blogs/' + id) ; 
 
     return ( 
-        <div className="blod-details">
+        <div className="blog-details">
 {isPending && <div> Loading...</div> }
 {error && <div> {error} </div>}
 {blog && (
