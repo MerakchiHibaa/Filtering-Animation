@@ -24,7 +24,7 @@ function App() {
       activeGenre={activeGenre} 
       setActiveGenre={setActiveGenre}  />
      <div className="popular-movies">
-       {popular.map(movie => {
+       {filtered.map(movie => {
          return <Movie key={movie.id} movie={movie} /> 
 
        })}
